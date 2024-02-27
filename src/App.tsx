@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <h1>Marketplace</h1>
+      <h1>Fish Gear</h1>
     </>
   )
 }
