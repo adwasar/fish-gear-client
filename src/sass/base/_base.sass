@@ -14,6 +14,10 @@ a
   color: inherit
 
 .container
-  width: calc( 100% - 128px)
   margin: 0 auto
+  width: calc(100% - 128px)
   max-width: 1600px
+  @include v-lg
+    width: calc(100% - 64px)
+  @include v-sm
+    width: calc(100% - 32px)
