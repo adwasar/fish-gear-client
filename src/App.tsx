@@ -1,13 +1,10 @@
+import Top from './components/Top'
+
 function App() {
-  const fn = (param: string) => {
-    console.log(param + '!')
-  }
-
-  fn('hello')
-
   return (
     <>
-      <h1>Fish Gear</h1>
+      <Top />
+      <h1>Fishing harbor</h1>
     </>
   )
 }
