@@ -1,4 +1,4 @@
-import Top from './sass/layout/Top'
+import Top from './layout/Top'
 
 function App() {
   return (
