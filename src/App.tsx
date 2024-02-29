@@ -1,9 +1,11 @@
-import Top from './components/Top'
+import Top from './sass/layout/Top'
 
 function App() {
   return (
     <>
-      <Top />
+      <header>
+        <Top />
+      </header>
       <h1>Fishing harbor</h1>
     </>
   )
