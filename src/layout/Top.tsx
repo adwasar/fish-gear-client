@@ -1,8 +1,8 @@
 function Top() {
   return (
     <>
-      <div className="container">
-        <nav className="top">
+      <nav className="top">
+        <div className="container">
           <ul className="top__list">
             <li>
               <a href="#">Доставка і оплата</a>
@@ -17,8 +17,8 @@ function Top() {
               <a href="#">Контакти</a>
             </li>
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </>
   )
 }
