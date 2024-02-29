@@ -6,7 +6,6 @@ function App() {
       <header>
         <Top />
       </header>
-      <h1>Fishing harbor</h1>
     </>
   )
 }
