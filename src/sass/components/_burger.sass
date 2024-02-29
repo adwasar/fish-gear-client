@@ -1,0 +1,23 @@
+.burger
+  position: relative
+  display: none
+  flex-direction: column
+  justify-content: center
+  height: 40px
+  flex: 0 0 30px
+  color: $white
+  cursor: pointer
+  @include v-md
+    display: flex
+  &__tt,
+  &__mm,
+  &__bb
+    position: absolute
+    display: block
+    width: 100%
+    border-bottom: 2px solid $white
+    border-radius: 1px
+  &__tt
+    margin-bottom: 20px
+  &__bb
+    margin-top: 20px

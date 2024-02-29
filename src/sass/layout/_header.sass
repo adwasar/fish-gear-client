@@ -1,6 +1,10 @@
 .header
   background-color: $black
   color: $white
+  &__logo
+    cursor: pointer
+    @include v-md
+      display: none
   &__content
     display: flex
     justify-content: space-between
@@ -9,3 +13,21 @@
     gap: 20px
     @include v-md
       height: 72px
+  &__actions
+    display: flex
+    height: 40px
+    gap: 16px
+  &__btn-user,
+  &__btn-liked,
+  &__btn-card
+    padding: 0
+    width: 30px
+    background: none
+    border: none
+    cursor: pointer
+  &__btn-user,
+  &__btn-liked
+    @include v-md
+      display: none
+    img
+      width: 24px
