@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 function Top() {
   return (
     <>
@@ -5,16 +7,16 @@ function Top() {
         <div className="container">
           <ul className="top__list">
             <li>
-              <a href="#">Доставка і оплата</a>
+              <NavLink to="/payment-and-delivery">Доставка і оплата</NavLink>
             </li>
             <li>
-              <a href="#">Про магазин</a>
+              <NavLink to="/about">Про магазин</NavLink>
             </li>
             <li>
-              <a href="#">Відгуки</a>
+              <NavLink to="/reviews">Відгуки</NavLink>
             </li>
             <li>
-              <a href="#">Контакти</a>
+              <NavLink to="/contacts">Контакти</NavLink>
             </li>
           </ul>
         </div>

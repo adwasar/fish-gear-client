@@ -2,6 +2,7 @@ import imgPathSearch from '../assets/icons/search.svg'
 import imgPathUser from '../assets/icons/user.svg'
 import imgPathLiked from '../assets/icons/liked.svg'
 import imgPathCard from '../assets/icons/card.svg'
+import { NavLink } from 'react-router-dom'
 
 function Header() {
   return (
@@ -9,7 +10,9 @@ function Header() {
       <div className="header">
         <div className="container">
           <div className="header__content">
-            <div className="header__logo">LOGO</div>
+            <NavLink to="/">
+              <div className="header__logo">LOGO</div>
+            </NavLink>
             <div className="burger">
               <span className="burger__tt"></span>
               <span className="burger__mm"></span>
