@@ -4,7 +4,12 @@ import imgPathUser from '../assets/icons/user.svg'
 import imgPathLiked from '../assets/icons/liked.svg'
 import imgPathCard from '../assets/icons/card.svg'
 
-function BurgerMenu({ burgerIsOpen, closeBurgerMenu }) {
+interface BurgerMenuProps {
+  burgerIsOpen: boolean
+  closeBurgerMenu: () => void
+}
+
+function BurgerMenu({ burgerIsOpen, closeBurgerMenu }: BurgerMenuProps) {
   return (
     <>
       <aside className={`burger-menu ${burgerIsOpen ? 'active' : ''}`}>
