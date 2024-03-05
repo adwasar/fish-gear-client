@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import imgPathUser from '../assets/icons/user.svg'
@@ -10,9 +11,25 @@ interface BurgerMenuProps {
 }
 
 function BurgerMenu({ burgerIsOpen, closeBurgerMenu }: BurgerMenuProps) {
+  const burgerMenuRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (!burgerMenuRef.current?.contains(e.target as Node)) {
+        closeBurgerMenu()
+      }
+    }
+
+    document.addEventListener('mousedown', handler)
+
+    return () => {
+      document.removeEventListener('mousedown', handler)
+    }
+  })
+
   return (
     <>
-      <aside className={`burger-menu ${burgerIsOpen ? 'active' : ''}`}>
+      <aside className={`burger-menu ${burgerIsOpen ? 'active' : ''}`} ref={burgerMenuRef}>
         <header className="burger-menu__header">
           <button className="burger-menu__btn-user">
             <img src={imgPathUser} alt="User" />
