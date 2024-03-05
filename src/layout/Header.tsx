@@ -1,23 +1,37 @@
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+
 import imgPathSearch from '../assets/icons/search.svg'
 import imgPathUser from '../assets/icons/user.svg'
 import imgPathLiked from '../assets/icons/liked.svg'
 import imgPathCard from '../assets/icons/card.svg'
-import { NavLink } from 'react-router-dom'
+
+import BurgerMenu from './BurgerMenu'
 
 function Header() {
+  const [burgerIsOpen, setBurgerIsOpen] = useState(false)
+
+  const openBurgerMenu = () => {
+    setBurgerIsOpen(true)
+  }
+
+  const closeBurgerMenu = () => {
+    setBurgerIsOpen(false)
+  }
+
   return (
     <>
       <div className="header">
         <div className="container">
           <div className="header__content">
-            <NavLink to="/">
-              <div className="header__logo">LOGO</div>
-            </NavLink>
-            <div className="burger">
+            <div className="header__logo">
+              <NavLink to="/">LOGO</NavLink>
+            </div>
+            <button className="burger" onClick={openBurgerMenu}>
               <span className="burger__tt"></span>
               <span className="burger__mm"></span>
               <span className="burger__bb"></span>
-            </div>
+            </button>
             <form className="search-form">
               <button className="search-form__btn">
                 <img className="search-form__btn-icon" src={imgPathSearch} alt="Search" />
@@ -37,6 +51,7 @@ function Header() {
             </div>
           </div>
         </div>
+        <BurgerMenu burgerIsOpen={burgerIsOpen} closeBurgerMenu={closeBurgerMenu} />
       </div>
     </>
   )
