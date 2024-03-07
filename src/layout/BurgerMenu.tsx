@@ -8,9 +8,10 @@ import imgPathCard from '../assets/icons/card.svg'
 interface BurgerMenuProps {
   burgerIsOpen: boolean
   closeBurgerMenu: () => void
+  openCart: () => void
 }
 
-function BurgerMenu({ burgerIsOpen, closeBurgerMenu }: BurgerMenuProps) {
+function BurgerMenu({ burgerIsOpen, closeBurgerMenu, openCart }: BurgerMenuProps) {
   const burgerMenuRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -41,12 +42,12 @@ function BurgerMenu({ burgerIsOpen, closeBurgerMenu }: BurgerMenuProps) {
               <img src={imgPathLiked} alt="Bookmarks" />
             </NavLink>
           </button>
-          <button className="header__btn-card">
+          <button className="header__btn-card" onClick={openCart}>
             <img src={imgPathCard} alt="Card" />
           </button>
-          <button className="burger-menu__btn-close" onClick={closeBurgerMenu}>
-            <span className="burger-menu__btn-close-tt"></span>
-            <span className="burger-menu__btn-close-bb"></span>
+          <button className="burger-menu__btn-close btn-close" onClick={closeBurgerMenu}>
+            <span className="btn-close__tt"></span>
+            <span className="btn-close__bb"></span>
           </button>
         </header>
         <nav className="burger-menu__nav">

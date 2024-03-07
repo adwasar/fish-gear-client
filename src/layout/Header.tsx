@@ -7,9 +7,11 @@ import imgPathLiked from '../assets/icons/liked.svg'
 import imgPathCard from '../assets/icons/card.svg'
 
 import BurgerMenu from './BurgerMenu'
+import Cart from './Cart'
 
 function Header() {
   const [burgerIsOpen, setBurgerIsOpen] = useState(false)
+  const [cartIsOpen, setCartIsOpen] = useState(false)
 
   const openBurgerMenu = () => {
     setBurgerIsOpen(true)
@@ -17,6 +19,15 @@ function Header() {
 
   const closeBurgerMenu = () => {
     setBurgerIsOpen(false)
+  }
+
+  const openCart = () => {
+    setBurgerIsOpen(false)
+    setCartIsOpen(true)
+  }
+
+  const closeCart = () => {
+    setCartIsOpen(false)
   }
 
   const search = (e: FormEvent) => {
@@ -53,13 +64,18 @@ function Header() {
                   <img src={imgPathLiked} alt="Bookmarks" />
                 </NavLink>
               </button>
-              <button className="header__btn-card">
+              <button className="header__btn-card" onClick={openCart}>
                 <img src={imgPathCard} alt="Card" />
               </button>
             </div>
           </div>
         </div>
-        <BurgerMenu burgerIsOpen={burgerIsOpen} closeBurgerMenu={closeBurgerMenu} />
+        <BurgerMenu
+          burgerIsOpen={burgerIsOpen}
+          closeBurgerMenu={closeBurgerMenu}
+          openCart={openCart}
+        />
+        <Cart cartIsOpen={cartIsOpen} closeCart={closeCart} />
       </div>
     </>
   )
