@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import imgPathSearch from '../assets/icons/search.svg'
@@ -19,6 +19,10 @@ function Header() {
     setBurgerIsOpen(false)
   }
 
+  const search = (e: FormEvent) => {
+    e.preventDefault()
+  }
+
   return (
     <>
       <div className="header">
@@ -33,7 +37,7 @@ function Header() {
               <span className="burger__bb"></span>
             </button>
             <form className="search-form">
-              <button className="search-form__btn">
+              <button className="search-form__btn" onClick={search}>
                 <img className="search-form__btn-icon" src={imgPathSearch} alt="Search" />
               </button>
               <input className="search-form__input" type="text" placeholder="пошук товарів" />
