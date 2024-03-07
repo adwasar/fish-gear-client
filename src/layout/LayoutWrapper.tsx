@@ -6,15 +6,17 @@ import Header from './Header'
 function HomePage() {
   return (
     <>
-      <header>
-        <Top />
-        <Header />
-      </header>
-      <main>
-        <div className="container">
-          <Outlet></Outlet>
-        </div>
-      </main>
+      <div className="wrapper">
+        <header>
+          <Top />
+          <Header />
+        </header>
+        <main>
+          <div className="container">
+            <Outlet></Outlet>
+          </div>
+        </main>
+      </div>
     </>
   )
 }
