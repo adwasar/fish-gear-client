@@ -11,7 +11,7 @@ interface BurgerMenuProps {
 }
 
 function BurgerMenu({ burgerIsOpen, closeBurgerMenu }: BurgerMenuProps) {
-  const burgerMenuRef = useRef<HTMLElement | null>(null)
+  const burgerMenuRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -32,10 +32,14 @@ function BurgerMenu({ burgerIsOpen, closeBurgerMenu }: BurgerMenuProps) {
       <aside className={`burger-menu ${burgerIsOpen ? 'active' : ''}`} ref={burgerMenuRef}>
         <header className="burger-menu__header">
           <button className="burger-menu__btn-user">
-            <img src={imgPathUser} alt="User" />
+            <NavLink to="/in" onClick={closeBurgerMenu}>
+              <img src={imgPathUser} alt="User" />
+            </NavLink>
           </button>
           <button className="burger-menu__btn-liked">
-            <img src={imgPathLiked} alt="Liked" />
+            <NavLink to="/bookmarks" onClick={closeBurgerMenu}>
+              <img src={imgPathLiked} alt="Bookmarks" />
+            </NavLink>
           </button>
           <button className="header__btn-card">
             <img src={imgPathCard} alt="Card" />

@@ -40,10 +40,14 @@ function Header() {
             </form>
             <div className="header__actions">
               <button className="header__btn-user">
-                <img src={imgPathUser} alt="User" />
+                <NavLink to="/in">
+                  <img src={imgPathUser} alt="User" />
+                </NavLink>
               </button>
               <button className="header__btn-liked">
-                <img src={imgPathLiked} alt="Heard" />
+                <NavLink to="/bookmarks">
+                  <img src={imgPathLiked} alt="Bookmarks" />
+                </NavLink>
               </button>
               <button className="header__btn-card">
                 <img src={imgPathCard} alt="Card" />

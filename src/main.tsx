@@ -9,6 +9,8 @@ import AboutPage from './pages/AboutPage'
 import ReviewsPage from './pages/ReviewsPage'
 import ContactsPage from './pages/ContactsPage'
 import NotFoundPage from './pages/NotFoundPage'
+import UserPage from './pages/UserPage'
+import BookmarksPage from './pages/BookmarksPage'
 
 import 'normalize.css'
 import './sass/main.sass'
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
       {
         path: '/contacts',
         element: <ContactsPage />,
+      },
+      {
+        path: '/in',
+        element: <UserPage />,
+      },
+      {
+        path: '/bookmarks',
+        element: <BookmarksPage />,
       },
     ],
   },
