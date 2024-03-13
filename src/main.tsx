@@ -1,11 +1,60 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import Layout from './components/Layout'
+import HomePage from './pages/HomePage'
+import PaymentAndDeliveryPage from './pages/PaymentAndDeliveryPage'
+import AboutPage from './pages/AboutPage'
+import ReviewsPage from './pages/ReviewsPage'
+import ContactsPage from './pages/ContactsPage'
+import NotFoundPage from './pages/NotFoundPage'
+import UserPage from './pages/UserPage'
+import BookmarksPage from './pages/BookmarksPage'
+
 import 'normalize.css'
 import './sass/main.sass'
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    errorElement: <NotFoundPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: '/payment-and-delivery',
+        element: <PaymentAndDeliveryPage />,
+      },
+      {
+        path: '/about',
+        element: <AboutPage />,
+      },
+      {
+        path: '/reviews',
+        element: <ReviewsPage />,
+      },
+      {
+        path: '/contacts',
+        element: <ContactsPage />,
+      },
+      {
+        path: '/in',
+        element: <UserPage />,
+      },
+      {
+        path: '/bookmarks',
+        element: <BookmarksPage />,
+      },
+    ],
+  },
+])
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
