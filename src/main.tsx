@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import LayoutWrapper from './layout/LayoutWrapper'
+import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import PaymentAndDeliveryPage from './pages/PaymentAndDeliveryPage'
 import AboutPage from './pages/AboutPage'
@@ -18,7 +18,7 @@ import './sass/main.sass'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <LayoutWrapper />,
+    element: <Layout />,
     errorElement: <NotFoundPage />,
     children: [
       {

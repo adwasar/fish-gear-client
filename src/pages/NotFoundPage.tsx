@@ -1,5 +1,5 @@
-import Top from '../layout/Top'
-import Header from '../layout/Header'
+import Top from '../components/Top'
+import Header from '../components/Header'
 
 function NotFoundPage() {
   return (
