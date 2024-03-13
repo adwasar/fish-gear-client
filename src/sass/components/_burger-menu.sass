@@ -6,6 +6,7 @@
   left: 0
   min-height: 100vh
   min-width: 300px
+  max-width: 480px
   width: 80%
   box-sizing: border-box
   color: $black
@@ -40,7 +41,7 @@
   transform: translateX(0)
   transition: transform .4s
 
-.cart-overlay
+.burger-menu-overlay
   position: fixed
   top: 0
   left: 0
@@ -50,6 +51,6 @@
   display: none
   z-index: 1
 
-.cart-overlay.active
+.burger-menu-overlay.active
   @include v-md
     display: block
